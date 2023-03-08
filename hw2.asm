@@ -1,6 +1,3 @@
-;reut hakiki 209272251
-;Netanel Shiri 315904714
-
 ;The program builds the game board like the proper step board
 ;which is a "snake". The plan is to upgrade the previous task here
 ;too we will check the appropriate steps in the board
@@ -63,7 +60,7 @@ startCopyBoard:				; the board
 	mov eax,0
 	mov al,numcols
 	mul bl        ;ax=12
-	mov ecx,OFFSET board	 ;ecx = ëúåáú ääúçìä ùì äìåç äî÷åøé
+	mov ecx,OFFSET board	 ;ecx = Ã«ÃºÃ¥Ã¡Ãº Ã¤Ã¤ÃºÃ§Ã¬Ã¤ Ã¹Ã¬ Ã¤Ã¬Ã¥Ã§ Ã¤Ã®Ã·Ã¥Ã¸Ã©
 	add ecx,eax
 	mov eax,0				;current line in AH
 	mov esi,0			
@@ -414,7 +411,7 @@ StepsGame:						;goodBoard is complete
 	add endBoard,ebx			;OFFSET+ (numrows*numcols)
 	mov bl,0					;bl = col index
 	mov dl,0					;dl = row index
-	mov edi,OFFSET moveseries    ; edi = ëúåáú ääúçìä ùì ìåç äöòãéí
+	mov edi,OFFSET moveseries    ; edi = Ã«ÃºÃ¥Ã¡Ãº Ã¤Ã¤ÃºÃ§Ã¬Ã¤ Ã¹Ã¬ Ã¬Ã¥Ã§ Ã¤Ã¶Ã²Ã£Ã©Ã­
 	mov eax,0
 	mov al,BYTE ptr [edi] 
 
@@ -425,7 +422,7 @@ checkingcol:
 	jc dlodd
 	rcl dl,1
 	add bl,al
-	cmp bl,numcols ;àí äòîåãä áèååç
+	cmp bl,numcols ;Ã Ã­ Ã¤Ã²Ã®Ã¥Ã£Ã¤ Ã¡Ã¨Ã¥Ã¥Ã§
 	jb maybegoodcol
 	sub bl,al
 	mov ah,numcols
@@ -437,7 +434,7 @@ checkingcol:
 dlodd:
 	rcl dl,1
 	sub bl,al
-	cmp bl,0 ;àí äòîåãä áèååç
+	cmp bl,0 ;Ã Ã­ Ã¤Ã²Ã®Ã¥Ã£Ã¤ Ã¡Ã¨Ã¥Ã¥Ã§
 	jge maybegoodcol
 	add bl,al
 	mov ah,bl  ;was numcols => bl
@@ -643,7 +640,7 @@ writescore PROC USES ESI EDI ECX EBX EDX
 	mov ecx, [ebp + BOARDfunc]		 ; ecx = index of goodBoard
 	mov bl,0						;bl = col index
 	mov dl,0						;dl = row index
-	mov edi, [ebp + MOVESfunc]      ;edi =   ëúåáú ääúçìä ùì ìåç äöòãéí äîéğîìéú
+	mov edi, [ebp + MOVESfunc]      ;edi =   Ã«ÃºÃ¥Ã¡Ãº Ã¤Ã¤ÃºÃ§Ã¬Ã¤ Ã¹Ã¬ Ã¬Ã¥Ã§ Ã¤Ã¶Ã²Ã£Ã©Ã­ Ã¤Ã®Ã©Ã°Ã®Ã¬Ã©Ãº
 	mov eax,0
 	mov al,BYTE ptr [edi]  
 
@@ -654,7 +651,7 @@ checkingcol:
 	jc dlodd
 	rcl dl,1
 	add bl,al
-	cmp bl,[ebp + COLSfunc] ;àí äòîåãä áèååç
+	cmp bl,[ebp + COLSfunc] ;Ã Ã­ Ã¤Ã²Ã®Ã¥Ã£Ã¤ Ã¡Ã¨Ã¥Ã¥Ã§
 	jb maybegoodcol
 	sub bl,al
 	mov ah,[ebp + COLSfunc]
@@ -666,7 +663,7 @@ checkingcol:
 dlodd:
 	rcl dl,1
 	sub bl,al
-	cmp bl,0 ;àí äòîåãä áèååç
+	cmp bl,0 ;Ã Ã­ Ã¤Ã²Ã®Ã¥Ã£Ã¤ Ã¡Ã¨Ã¥Ã¥Ã§
 	jge maybegoodcol
 	add bl,al
 	mov ah,bl  ;was numcols => bl
