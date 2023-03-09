@@ -23,8 +23,8 @@ INCLUDE C:\Irvine\Irvine32.inc
 INCLUDE hw1_data.inc
 
 .data
-student_details1 BYTE "Reut Hakiki, ID: 209272251 ", 13, 10, 0
-student_details2 BYTE "Netanel Shiri, ID: 315904714", 13, 10, 0
+student_details1 BYTE "Reut Hakiki, ID: 111111111 ", 13, 10, 0
+student_details2 BYTE "Netanel Shiri, ID: 333333333", 13, 10, 0
 goodBoard BYTE LENGTHOF board dup(0),0
 score DWORD 0
 gamefin BYTE '0'
